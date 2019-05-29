@@ -1,0 +1,16 @@
+.sb-page {
+  height: 100%;
+
+  .sb-page-header {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .sb-page-content {
+    padding: 10px;
+  }
+}

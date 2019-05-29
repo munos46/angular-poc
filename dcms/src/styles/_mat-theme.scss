@@ -1,0 +1,52 @@
+@import '~@angular/material/theming';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// Include palette for sbng theme
+@import '_variables';
+
+// Define palettes for sbng theme
+$sb-theme-primary: mat-palette($md-sb-primary);
+$sb-theme-primary2: mat-palette($md-sb-primary2);
+$sb-theme-primary3: mat-palette($md-sb-primary3);
+
+// Define color var for sb components and add them to background color mechanism
+// Those 4 variables come from ~@angular/material/theming and that are used in mat-light-theme() and mat-dark-theme() functions
+// We are injecting our color variable to benefit from their theming system
+$mat-light-theme-background: map_merge($mat-light-theme-background,
+(sb-banner-background: $sb-banner-background-light,
+sb-footer-border: $sb-footer-border-light,
+sb-footer-background: $sb-footer-background-light,
+sb-page-background: $sb-page-background-light,
+sb-sub-block-header-background: $sb-sub-block-header-background-light,
+sb-sidebar-background: $sb-sidebar-background-light,
+sb-sidebar-item-hover-background: $sb-sidebar-item-hover-background-light));
+
+$mat-light-theme-foreground: map_merge($mat-light-theme-foreground,
+(sb-footer-logo-color: $sb-footer-logo-color-light,
+sb-sidebar-logo-color: $sb-sidebar-logo-color-light,
+sb-sidebar-item-color: $sb-sidebar-item-color-light));
+
+
+$mat-dark-theme-background: map_merge($mat-dark-theme-background,
+(sb-banner-background: $sb-banner-background-dark,
+sb-footer-border: $sb-footer-border-dark,
+sb-footer-background: $sb-footer-background-dark,
+sb-page-background: $sb-page-background-dark,
+sb-sub-block-header-background: $sb-sub-block-header-background-dark,
+sb-sidebar-background: $sb-sidebar-background-dark,
+sb-sidebar-item-hover-background: $sb-sidebar-item-hover-background-dark));
+
+$mat-dark-theme-foreground: map_merge($mat-dark-theme-foreground,
+(sb-footer-logo-color: $sb-footer-logo-color-dark,
+sb-sidebar-logo-color: $sb-sidebar-logo-color-dark,
+sb-sidebar-item-color: $sb-sidebar-item-color-dark));
+
+// Define a variable for generated sbng theme
+$sb-theme: mat-light-theme($sb-theme-primary, $sb-theme-primary);
+
+// load theme to the css
+@include angular-material-theme($sb-theme);

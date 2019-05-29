@@ -1,0 +1,46 @@
+<a routerLink="/showcase/visuel/liste/" routerLinkActive="active" style='float: right;'>
+  <i class="material-icons md-primary md-48 pdr-20 pdt-8 ">arrow_back</i>
+</a>
+<sb-page title="{{(id) ? 'Editing' : 'Creating'}} a visual">
+  <p-messages [value]="msgsMainPage"></p-messages>
+  <mat-expansion-panel [expanded]="true" [hideToggle]="true" [disabled]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Visual information
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-expansion-panel [expanded]="true" [hideToggle]="true" [disabled]="true" style="width: 50%;">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Visual form
+        </mat-panel-title>
+        <mat-icon>account_circle</mat-icon>
+      </mat-expansion-panel-header>
+
+      <form (ngSubmit)="onSubmit(visuelForm)" #visuelForm="ngForm" novalidate>
+        <mat-form-field>
+          <input matInput placeholder="Visual Code" [formControl]="codeVisuel" name="codeVisuel" required>
+          <mat-error *ngIf="codeVisuel.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <br>
+        <p-dropdown [options]="regroupementList" [(ngModel)]="codeRegroupement"
+          placeholder="Select attachment" name="codeRegroupement" [showClear]="true"></p-dropdown>
+        <br>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="External referance of visual code" name="refExt" [(ngModel)]="refExt">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="End of production date" name="dateFinFab" [(ngModel)]="dateFinFab">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br>
+
+        <button [disabled]="!visuelForm.valid" type="submit" mat-raised-button color="primary" class="formButton">{{(id) ? 'Editing' : 'Creating'}}</button>
+      </form>
+    </mat-expansion-panel>
+  </mat-expansion-panel>
+</sb-page>

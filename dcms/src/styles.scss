@@ -1,0 +1,26 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Import all primeNG css needed
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+//@import '~primeng/resources/themes/luna-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+// Import bootstrap css
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+// Import project material theme
+@import 'styles/_mat-theme.scss';
+
+// Include Sopra theme styles + loading mixin to take in account palette colors
+@import '../projects/sb-components/src/lib/style/sb-theme.scss';
+@include sb-theme($sb-theme);
+
+// Import specific style for the application
+@import 'styles/_workbench-structure.scss';
+@import 'styles/_specific.scss';
+
+// To remove negative margin from bootstrap css
+.row {
+  margin: 0;
+}

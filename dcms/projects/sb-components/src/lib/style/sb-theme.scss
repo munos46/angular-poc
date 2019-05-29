@@ -1,0 +1,71 @@
+// Define a mixin that accepts a theme and outputs the theme-specific styles.
+@mixin sb-theme($theme) {
+  @include sb-page-theme($theme);
+  @include sb-footer-theme($theme);
+  @include sb-sidebar($theme);
+}
+
+@mixin sb-page-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .sb-page {
+    background: mat-color($background, sb-page-background);
+    color: mat-color($foreground, text);
+  }
+}
+
+@mixin sb-footer-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .sb-footer {
+    background: mat-color($background, sb-footer-background);
+    border-top: 1px solid mat-color($background, sb-footer-border);
+
+    .sb-footer-logo {
+      color: mat-color($foreground, sb-footer-logo-color);
+    }
+
+    .sb-footer-links a {
+      color: mat-color($foreground, text);
+    }
+  }
+}
+
+@mixin sb-sidebar($theme) {
+  // Extract the palettes you need from the theme definition.
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  .sb-sidebar {
+    background: mat-color($background, sb-sidebar-background);
+
+    .sb-sidebar-logo {
+
+      .normal-logo,
+      .mini-logo {
+        color: mat-color($foreground, sb-sidebar-logo-color);
+      }
+    }
+
+    .sb-sidebar-menu>a {
+      color: mat-color($foreground, sb-sidebar-item-color);
+
+      &.active {
+        background: mat-color($primary);
+      }
+
+      &:hover:not(.active) {
+        background-color: mat-color($background, sb-sidebar-item-hover-background);
+      }
+    }
+  }
+
+  .sb-sidebar-toggle-icon svg {
+    fill: mat-color($foreground, text);
+  }
+}

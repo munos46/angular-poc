@@ -1,0 +1,137 @@
+// Palette color for material theme
+
+$md-sb-primary: (
+    50 : #fbe7e4,
+    100 : #f4c4bc,
+    200 : #ed9d90,
+    300 : #e67664,
+    400 : #e05842,
+    500 : #db3b21,
+    600 : #d7351d,
+    700 : #d22d18,
+    800 : #cd2614,
+    900 : #c4190b,
+    A100 : #fff0f0,
+    A200 : #ffc0bd,
+    A400 : #ff8f8a,
+    A700 : #ff7770,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-sb-primary2: (
+    50 : #e0f2fc,
+    100 : #b3dff8,
+    200 : #80caf3,
+    300 : #4db5ee,
+    400 : #26a5eb,
+    500 : #0095e7,
+    600 : #008de4,
+    700 : #0082e0,
+    800 : #0078dd,
+    900 : #0067d7,
+    A100 : #fefeff,
+    A200 : #cbe1ff,
+    A400 : #98c3ff,
+    A700 : #7fb4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$md-sb-primary3: (
+    50 : #eaf9e5,
+    100 : #cbf0bd,
+    200 : #a9e791,
+    300 : #87dd65,
+    400 : #6dd544,
+    500 : #53ce23,
+    600 : #4cc91f,
+    700 : #42c21a,
+    800 : #39bc15,
+    900 : #29b00c,
+    A100 : #e2ffdd,
+    A200 : #b6ffaa,
+    A400 : #8aff77,
+    A700 : #74ff5d,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$main-blue-grey: #374953;
+$white: white;
+$black: black;
+
+// SB components color configuration
+// LIGHT THEME
+$sb-banner-background-light: $white;
+
+$sb-page-background-light: #f4f3f8;
+
+$sb-sub-block-header-background-light: #fbfbfb;
+
+$sb-footer-border-light: #eee;
+$sb-footer-logo-color-light: $main-blue-grey;
+$sb-footer-background-light: $sb-banner-background-light;
+
+$sb-sidebar-background-light: $main-blue-grey;
+$sb-sidebar-logo-color-light: $white;
+$sb-sidebar-item-color-light: $white;
+$sb-sidebar-item-hover-background-light: #233139;
+
+// DARK THEME
+$sb-banner-background-dark: #181919;
+
+$sb-page-background-dark: #292929;
+
+$sb-sub-block-header-background-dark: #323232;
+
+$sb-footer-border-dark: #303232;
+$sb-footer-logo-color-dark: $white;
+$sb-footer-background-dark: $sb-banner-background-dark;
+
+$sb-sidebar-background-dark: $white;
+$sb-sidebar-logo-color-dark: $black;
+$sb-sidebar-item-color-dark: $black;
+$sb-sidebar-item-hover-background-dark: #f1f1f1;

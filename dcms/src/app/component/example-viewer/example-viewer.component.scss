@@ -1,0 +1,17 @@
+.sb-example-viewer{
+    margin: 10px 40px;
+    display: block;
+    padding: 20px;
+    border: 1px solid #dedede;
+    background: white;
+
+    .component-container {
+        padding: 20px 10px;
+    }
+
+    .mat-tab-body-wrapper {
+        height: 250px;
+        overflow-y: auto;
+        display: grid;
+    }
+}

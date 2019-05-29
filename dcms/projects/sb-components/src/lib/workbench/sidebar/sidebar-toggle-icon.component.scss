@@ -1,0 +1,18 @@
+.sb-sidebar-toggle-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    width: 34px;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .sb-sidebar-toggle-icon {
+      display: none;
+  }
+}

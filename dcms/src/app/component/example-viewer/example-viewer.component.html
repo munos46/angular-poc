@@ -1,0 +1,15 @@
+<h4>{{title}}</h4>
+<div class="component-container">
+  <ng-content></ng-content>
+</div>
+<div class="component-code">
+  <mat-tab-group>
+    <mat-tab *ngFor="let tab of contentTab | keyvalue" [label]="tab.key">
+      <pre>
+      <code class={{_getClassColor(tab.key)}} pCode>
+        {{tab.value}}
+      </code>
+    </pre>
+    </mat-tab>
+  </mat-tab-group>
+</div>

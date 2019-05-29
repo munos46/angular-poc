@@ -1,0 +1,44 @@
+<mat-expansion-panel [expanded]="true" [hideToggle]="true" [disabled]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Car information
+      </mat-panel-title>
+      <mat-icon>directions_car</mat-icon>
+    </mat-expansion-panel-header>
+
+    <div class="row">
+      <div class="col-12 col-lg-8">
+
+        <mat-form-field>
+          <mat-select placeholder="Car
+            brand">
+            <mat-option>All</mat-option>
+            <mat-option value="BMW">BMW</mat-option>
+            <mat-option value="Bugatti">Bugatti</mat-option>
+            <mat-option value="FIAT">FIAT</mat-option>
+            <mat-option value="Ford">Ford</mat-option>
+            <mat-option value="Hyundai">Hyundai</mat-option>
+            <mat-option value="Toyota">Toyota</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-select placeholder="Miles">
+            <mat-option value="10">10</mat-option>
+            <mat-option value="50">50</mat-option>
+            <mat-option value="100">100</mat-option>
+            <mat-option value="200">200</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <div style="color: grey;">Max cost</div>
+        <mat-slider [min]="6000" [max]="175000" thumbLabel [displayWith]="formatLabel" tickInterval="1000">
+        </mat-slider>
+        <br>
+      </div>
+      <div class="col-12 col-lg-4">
+        <br>
+        <mat-slide-toggle>Insurance</mat-slide-toggle>
+      </div>
+    </div>
+  </mat-expansion-panel>

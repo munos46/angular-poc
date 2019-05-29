@@ -1,0 +1,54 @@
+<sb-page title="CAR RENTING">
+
+  <p-messages [value]="msgsMainPage" [closable]="false"></p-messages>
+
+  <mat-expansion-panel [expanded]="true">
+    
+    <mat-expansion-panel-header>
+      Renting form
+    </mat-expansion-panel-header>
+
+    <form class="example-form">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <client-information></client-information>
+        </div>
+        <div class="col-12 col-md-6">
+          <car-information></car-information>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" class="formButton" (click)="triggerSearch()">Search</button>
+    </form>
+
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="expendedSearch" [disabled]="disabledSearch">
+    <mat-expansion-panel-header>
+      Search results
+    </mat-expansion-panel-header>
+
+    <p-messages [value]="msgsSearchResults" [closable]="false"></p-messages>
+
+    <p-table [columns]="cols" [value]="cars" [reorderableColumns]="true" selectionMode="single" [(selection)]="selectedCar1"
+      [paginator]="true" [rows]="10">
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th style="width:3.5em"></th>
+          <th *ngFor="let col of columns" pReorderableColumn>
+            {{col.header}}
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns" let-index="rowIndex">
+        <tr [pReorderableRow]="index" [pSelectableRow]="rowData">
+          <td>
+            <mat-icon pReorderableRowHandle>reorder</mat-icon>
+          </td>
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </mat-expansion-panel>
+</sb-page>

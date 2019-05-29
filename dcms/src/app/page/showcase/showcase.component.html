@@ -1,0 +1,51 @@
+<div class="main-container">
+  <div class="sideBar-container">
+    <sb-sidebar>
+      <sb-sidebar-logo>
+        <mat-icon svgIcon="company-logo" class="normal-logo"></mat-icon>
+        <mat-icon svgIcon="company-logo-mini" class="mini-logo"></mat-icon>
+      </sb-sidebar-logo>
+
+      <sb-sidebar-menu>
+        <a routerLink="/showcase/home" routerLinkActive="active">Home</a>
+        <div>Components</div>
+        <a routerLink="/showcase/expansion-panel" routerLinkActive="active">Expension Panel<div class="menu-icon">M</div></a>
+        <a routerLink="/showcase/messages" routerLinkActive="active">Messages<div class="menu-icon">P</div></a>
+        <a routerLink="/showcase/footer" routerLinkActive="active">Footer<div class="menu-icon">S</div></a>
+        <div>Sample</div>
+        <a routerLink="/showcase/car-renting" routerLinkActive="active">Car
+          renting</a>
+          <a routerLink="/showcase/client" routerLinkActive="active">Client</a>
+          <a routerLink="/showcase/visuel/liste" routerLinkActive="active">GT Visuel</a>
+      </sb-sidebar-menu>
+    </sb-sidebar>
+  </div>
+
+  <sb-sidebar-overlay-content></sb-sidebar-overlay-content>
+
+  <div class="workarea">
+
+    <div class="banner-container">
+      <sb-sidebar-toggle-icon> </sb-sidebar-toggle-icon>
+    </div>
+
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div class="footer-container">
+      <sb-footer>
+        <sb-footer-logo>
+          <mat-icon svgIcon="company-logo" class="normal-logo"></mat-icon>
+          <mat-icon svgIcon="company-logo-mini" class="mini-logo"></mat-icon>
+        </sb-footer-logo>
+
+        <sb-footer-links>
+          <a href="#">Mentions légales</a>
+          <a href="#">Contact</a>
+          <a href="#">About</a>
+        </sb-footer-links>
+      </sb-footer>
+    </div>
+  </div>
+</div>

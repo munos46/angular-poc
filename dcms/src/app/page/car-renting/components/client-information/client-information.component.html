@@ -1,0 +1,39 @@
+<mat-expansion-panel [expanded]="true" [hideToggle]="true" [disabled]="true">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Client information
+    </mat-panel-title>
+    <mat-icon>account_circle</mat-icon>
+  </mat-expansion-panel-header>
+
+  <mat-button-toggle-group name="fontStyle" aria-label="Font
+                Style">
+    <mat-button-toggle value="Miss">MISS</mat-button-toggle>
+    <mat-button-toggle value="Mister">MISTER</mat-button-toggle>
+  </mat-button-toggle-group>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Firstname">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Lastname">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" placeholder="Birthdate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" [formControl]="emailFormControl">
+    <mat-error *ngIf="emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</mat-expansion-panel>

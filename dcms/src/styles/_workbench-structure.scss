@@ -1,0 +1,71 @@
+/////////////////////////////
+// - WORKBENCH STRUCTURE - //
+/////////////////////////////
+
+// <div class="main-container">
+//   <div class="sideBar-container"> Optional
+//     ...sidebar-component...
+//   </div>
+
+//   <div class="workarea">
+//     <div class="banner-container"> Optional
+//       ...banner-component...
+//     </div>
+
+//     <div class="content-container">
+//       ...content...
+//     </div>
+
+//     <div class="footer-container"> Optional
+//       ...footer-component...
+//     </div>
+
+//   </div>
+// </div>
+
+.main-container {
+  display: flex;
+
+  .sideBar-container {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container .sideBar-container {
+    width: 0;
+  }
+}
+
+.workarea {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content) 1fr minmax(min-content, max-content);
+
+  // for edge 15
+  display: -ms-grid;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: minmax(min-content, max-content) 1fr minmax(min-content, max-content);
+}
+
+.banner-container {
+  grid-row: 1;
+
+  // for edge 15
+  -ms-grid-row: 1;
+}
+
+.content-container {
+  grid-row: 2;
+
+  // for edge 15
+  -ms-grid-row: 2;
+}
+
+.footer-container {
+  grid-row: 3;
+
+  // for edge 15
+  -ms-grid-row: 3;
+}
